@@ -71,8 +71,8 @@ percentages = total_sales_CE / total_sales_CE.sum()
 
 #Buat diagram lingkaran
 fag, ux = plt.subplots(figsize=(10,3))
-ux.plt.pie(percentages, labels=total_sales_CE.index, autopct='%1.1f%%')
-ux.plt.title("Total Sales di setiap Kota pada negara CE")
+plt.pie(percentages, labels=total_sales_CE.index, autopct='%1.1f%%')
+plt.title("Total Sales di setiap Kota pada negara CE")
 st.pyplot(fag)
 
 with st.expander("See Explanation"):
