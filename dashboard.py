@@ -39,7 +39,7 @@ st.header('E-Commerce Public Dashboard: Sellers_Dataset')
 max_min_state_ES = create_max_min_state_ES(e_commerce)
 dist_state_CE = create_dist_state_CE(e_commerce)
 
-st.subheader('Bagaimana demografi sales tertinggi dan terendah pada kota-kota di state ES?')
+st.subheader('Bagaimana demografi sales tertinggi dan terendah pada kota-kota di negara ES?')
 
 top = max_min_state_ES.head(5)
 bottom = max_min_state_ES.tail(5)
@@ -58,7 +58,7 @@ st.pyplot(fig)
 
 with st.expander("See Explanation"):
   st.write(
-      """Dapat di simpulkan bahwa kota Cachoeiro de Itapemirim, Vila Velha,  dan Vitoria sebagai kota dengan sales tertinggi, dengan demikian di harapkan stakeholder dapat melanjutkan strategi marketing lainnya agar dapat meningkatkan sales di 3 kota tersebut sehingga dapat meningkatkan laba pada perusahaan. Kemudian, kota Cariacica/Es, Colatina, Domingos Martins, Muqui, dan Viana merupakan kota dengan sales terendah, dengan demikian di harapkan stakeholder dapat menimbangkan untuk melanjutkan bisnis nya di kota-kota tersebut. Adapun kota yang berada di ambang tengah yaitu kota Serra dan Cariacica, dengan demikian di harapkan stakeholder dapat menimbangkan bisnis nya pada 2 kota tersebut."""
+      """Dapat di simpulkan bahwa kota Cachoeiro de Itapemirim, Vila Velha, dan Vitoria sebagai kota dengan sales tertinggi, dengan demikian di harapkan stakeholder dapat melanjutkan strategi marketing lainnya agar dapat meningkatkan sales di 3 kota tersebut sehingga dapat meningkatkan laba pada perusahaan. Kemudian, kota Cariacica/Es, Colatina, Domingos Martins, Muqui, dan Viana merupakan kota dengan sales terendah, dengan demikian di harapkan stakeholder dapat menimbangkan untuk melanjutkan bisnis nya di kota-kota tersebut. Adapun kota yang berada di ambang tengah yaitu kota Serra dan Cariacica, dengan demikian di harapkan stakeholder dapat menimbangkan bisnis nya pada 2 kota tersebut."""
   )
 
 st.subheader('Bagaimana distribusi sales pada kota-kota yang berada pada negara MS?')
