@@ -7,10 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1qyJaj2ENO0ZjeT_vZh2spCHR4PFwt0zF
 """
 
-pip install streamlit pandas matplotlib seaborn
-
-pip install streamlit --upgrade
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -50,15 +46,15 @@ bottom = max_min_state_ES.tail(5)
 
 combine = pd.concat([top, bottom])
 
-plt.figure(figsize=(10, 3))
-sns.barplot(x='Total Sales', y='Kota', data=combine, palette="Blues_r")
-plt.xlabel=('Total Sales')
-plt.ylabel=('Kota')
-plt.title('Total Sales berdasarkan Kota')
+fig, ax = plt.subplots(figsize=(10, 3))
+ax.sns.barplot(x='Total Sales', y='Kota', data=combine, palette="Blues_r")
+ax.plt.xlabel=('Total Sales')
+ax.plt.ylabel=('Kota')
+ax.plt.title('Total Sales berdasarkan Kota')
 
 for index, value in enumerate(combine['Total Sales']):
   plt.text(value, index, str(value))
-plt.show()
+st.pyplot(fig)
 
 with st.expander("See Explanation"):
   st.write(
@@ -74,9 +70,10 @@ total_sales_CE = state_CE.groupby("seller_city")["seller_id"].count()
 percentages = total_sales_CE / total_sales_CE.sum()
 
 #Buat diagram lingkaran
-plt.pie(percentages, labels=total_sales_CE.index, autopct='%1.1f%%')
-plt.title("Total Sales di setiap Kota pada negara CE")
-plt.show()
+fag, ux = plt.subplots(figsize=(10,3))
+ux.plt.pie(percentages, labels=total_sales_CE.index, autopct='%1.1f%%')
+ux.plt.title("Total Sales di setiap Kota pada negara CE")
+st.pyplot(fag)
 
 with st.expander("See Explanation"):
   st.write(
